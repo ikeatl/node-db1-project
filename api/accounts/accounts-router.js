@@ -57,7 +57,7 @@ router.delete("/:id", checkAccountId, async (req, res, next) => {
 
   try {
     const data = await Account.remove(req.params.id);
-    res.json(data);
+    res.status(204).end();
   } catch (err) {
     next(err);
   }
